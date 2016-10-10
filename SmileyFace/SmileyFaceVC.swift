@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SmileyFaceVC.swift
 //  SmileyFace
 //
 //  Created by Mehul Gupta on 10/10/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SmileyFaceVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
