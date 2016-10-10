@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480CCEF31DAC323D002E5377 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480CCEF21DAC323D002E5377 /* FacialExpression.swift */; };
 		4834F1101DABDB1700D44486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834F10F1DABDB1700D44486 /* AppDelegate.swift */; };
 		4834F1121DABDB1700D44486 /* SmileyFaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834F1111DABDB1700D44486 /* SmileyFaceVC.swift */; };
 		4834F1151DABDB1700D44486 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4834F1131DABDB1700D44486 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480CCEF21DAC323D002E5377 /* FacialExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 		4834F10C1DABDB1600D44486 /* SmileyFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmileyFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4834F10F1DABDB1700D44486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4834F1111DABDB1700D44486 /* SmileyFaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileyFaceVC.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				4834F1111DABDB1700D44486 /* SmileyFaceVC.swift */,
 				4834F1221DAC13A400D44486 /* FaceView.swift */,
+				480CCEF21DAC323D002E5377 /* FacialExpression.swift */,
 				4834F1131DABDB1700D44486 /* Main.storyboard */,
 				4834F1211DABDB3200D44486 /* Misc */,
 			);
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4834F1121DABDB1700D44486 /* SmileyFaceVC.swift in Sources */,
+				480CCEF31DAC323D002E5377 /* FacialExpression.swift in Sources */,
 				4834F1101DABDB1700D44486 /* AppDelegate.swift in Sources */,
 				4834F1231DAC13A400D44486 /* FaceView.swift in Sources */,
 			);
@@ -312,6 +316,7 @@
 				4834F1201DABDB1700D44486 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
