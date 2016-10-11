@@ -10,7 +10,7 @@ import UIKit
 
 class SmileyFaceVC: UIViewController {
     
-    var expression = FacialExpression(eyes: .Closed, eyeBrows: .Relaxed, mouth: .Smirk){ didSet{ updateFaceView() } }
+    var expression = FacialExpression(eyes: .Closed, eyeBrows: .Relaxed, mouth: .Grin){ didSet{ updateFaceView() } }
     
     @IBOutlet weak var faceView: FaceView!{ didSet{ updateFaceView() } }
     
