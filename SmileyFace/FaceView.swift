@@ -17,6 +17,16 @@ class FaceView: UIView {
     @IBInspectable var eyesBrowTilt: Double = -0.5 { didSet{ setNeedsDisplay() } } // -1 full furrow, 1.0 full relaxed
     @IBInspectable var color: UIColor = UIColor.blue { didSet{ setNeedsDisplay() } }
     @IBInspectable var lineWidth: CGFloat = 5.0 { didSet{ setNeedsDisplay() } }
+    
+    func changeScale(recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            scale *= recognizer.scale
+            recognizer.scale = 1.0
+        default:
+            break
+        }
+    }
 
     var skullRadius: CGFloat{
         return min(bounds.size.width, bounds.size.height) / 2 * scale

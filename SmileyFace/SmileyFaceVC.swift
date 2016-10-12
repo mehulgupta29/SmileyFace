@@ -10,9 +10,37 @@ import UIKit
 
 class SmileyFaceVC: UIViewController {
     
-    var expression = FacialExpression(eyes: .Closed, eyeBrows: .Relaxed, mouth: .Grin){ didSet{ updateFaceView() } }
+    var expression = FacialExpression(eyes: .Open, eyeBrows: .Relaxed, mouth: .Grin){ didSet{ updateFaceView() } }
     
-    @IBOutlet weak var faceView: FaceView!{ didSet{ updateFaceView() } }
+    
+    @IBOutlet weak var faceView: FaceView!{
+        
+        didSet{
+            faceView.addGestureRecognizer(UIPinchGestureRecognizer(
+                    target: faceView,
+                    action: #selector(FaceView.changeScale(recognizer:)))
+            )
+            
+            let happierSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(SmileyFaceVC.increaseHappiness))
+            happierSwipeGestureRecognizer.direction = .up
+            faceView.addGestureRecognizer(happierSwipeGestureRecognizer)
+
+            let saddnessSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(SmileyFaceVC.increaseSaddness))
+            saddnessSwipeGestureRecognizer.direction = .down
+            faceView.addGestureRecognizer(saddnessSwipeGestureRecognizer)
+            
+            updateFaceView()
+        }
+    }
+    
+    
+    @objc private func increaseHappiness(){
+        expression.mouth = expression.mouth.happierMouth()
+    }
+    
+    func increaseSaddness(){
+        expression.mouth = expression.mouth.sadderMouth()
+    }
     
     private func updateFaceView(){
         
