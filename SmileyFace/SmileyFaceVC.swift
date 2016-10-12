@@ -12,7 +12,6 @@ class SmileyFaceVC: UIViewController {
     
     var expression = FacialExpression(eyes: .Open, eyeBrows: .Relaxed, mouth: .Grin){ didSet{ updateFaceView() } }
     
-    
     @IBOutlet weak var faceView: FaceView!{
         
         didSet{
@@ -33,13 +32,23 @@ class SmileyFaceVC: UIViewController {
         }
     }
     
-    
     @objc private func increaseHappiness(){
         expression.mouth = expression.mouth.happierMouth()
     }
     
     func increaseSaddness(){
         expression.mouth = expression.mouth.sadderMouth()
+    }
+    
+    
+    @IBAction func toggleEyes(_ recognizer: UITapGestureRecognizer) {
+        if recognizer.state == .ended{
+            switch expression.eyes {
+            case .Open: expression.eyes = .Closed
+            case .Closed: expression.eyes = .Open
+            case .Squinting: break
+            }
+        }
     }
     
     private func updateFaceView(){
